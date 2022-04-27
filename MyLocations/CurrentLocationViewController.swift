@@ -20,7 +20,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     let locationManager = CLLocationManager()
     var location: CLLocation?
     var updatingLocation = false
-    var lastlocationError: Error?
+    var lastLocationError: Error?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +40,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             return
         }
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        startLocationManager()
+        updateLabels()
     }
     
     // MARK: - CLLocationManagerDelegate
@@ -54,7 +53,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             if (error as NSError).code == CLError.locationUnknown.rawValue {
                 return
             }
-            lastlocationError = error
+            lastLocationError = error
             stopLocationManager()
             updateLabels()
     }
@@ -65,6 +64,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             let newLocation = locations.last!
             print("didUpdateLocations \(newLocation)")
             location = newLocation
+            lastLocationError = nil
             updateLabels()
     }
     
@@ -101,7 +101,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             tagButton.isHidden = true
             
             let statusMessage: String
-            if let error = lastlocationError as NSError? {
+            if let error = lastLocationError as NSError? {
                 if error.domain == kCLErrorDomain && error.code == CLError.denied.rawValue {
                     statusMessage = "Location Services Disabled"
                 } else {
@@ -115,6 +115,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 statusMessage = "Tap 'Get My Location' to Start"
             }
             messageLabel.text = statusMessage
+        }
+    }
+    
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updatingLocation = true
         }
     }
     
