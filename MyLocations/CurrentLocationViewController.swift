@@ -61,44 +61,53 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     // MARK: - CLLocationManagerDelegate
     func locationManager(
         _ manager: CLLocationManager,
-        didFailWithError error: Error) {
-            print("didFailWithError \(error.localizedDescription)")
-            
-            if (error as NSError).code == CLError.locationUnknown.rawValue {
-                return
-            }
-            lastLocationError = error
-            stopLocationManager()
-            updateLabels()
+        didFailWithError error: Error
+    ) {
+        print("didFailWithError \(error.localizedDescription)")
+        
+        if (error as NSError).code == CLError.locationUnknown.rawValue {
+            return
+        }
+        lastLocationError = error
+        stopLocationManager()
+        updateLabels()
     }
     
     func locationManager(
         _ manager: CLLocationManager,
-        didUpdateLocations locations: [CLLocation]) {
-            let newLocation = locations.last!
-            print("didUpdateLocations \(newLocation)")
+        didUpdateLocations locations: [CLLocation]
+    ) {
+        let newLocation = locations.last!
+        print("didUpdateLocations \(newLocation)")
+        
+        if newLocation.timestamp.timeIntervalSinceNow < -5 {
+            return
+        }
+        
+        if newLocation.horizontalAccuracy < 0 {
+            return
+        }
+        
+        var distance = CLLocationDistance(Double.greatestFiniteMagnitude)
+        if let location = location {
+            distance = newLocation.distance(from: location)
+        }
+        
+        if location == nil || location!.horizontalAccuracy >
+            newLocation.horizontalAccuracy {
             
-            if newLocation.timestamp.timeIntervalSinceNow < -5 {
-                return
-            }
+            lastLocationError = nil
+            location = newLocation
             
-            if newLocation.horizontalAccuracy < 0 {
-                return
-            }
-            
-            if location == nil || location!.horizontalAccuracy >
-                newLocation.horizontalAccuracy {
+            if newLocation.horizontalAccuracy <=
+                locationManager.desiredAccuracy {
+                print("*** We're done!")
+                stopLocationManager()
                 
-                lastLocationError = nil
-                location = newLocation
-                
-                if newLocation.horizontalAccuracy <=
-                    locationManager.desiredAccuracy {
-                    print("*** We're done!")
-                    stopLocationManager()
+                if distance > 0 {
+                    performingReverseGeocoding = false
                 }
             }
-            updateLabels()
             
             if !performingReverseGeocoding {
                 print("*** Going to geocode")
@@ -116,6 +125,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                     self.updateLabels()
                 }
             }
+            updateLabels()
+        } else if distance < 1 {
+            let timeInterval = newLocation.timestamp.timeIntervalSince(location!.timestamp)
+            if timeInterval > 10 {
+                print("*** Force done!")
+                stopLocationManager()
+                updateLabels()
+            }
+        }
     }
     
     // MARK: - Helper Methods
