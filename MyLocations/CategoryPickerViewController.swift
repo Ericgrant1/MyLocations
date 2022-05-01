@@ -27,8 +27,10 @@ class CategoryPickerViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         for i in 0..<categories.count {
-            selectedIndexPath = IndexPath(row: i, section: 0)
-            break
+            if categories[i] == selectedCategoryName {
+                selectedIndexPath = IndexPath(row: i, section: 0)
+                break
+            }
         }
     }
     
@@ -70,7 +72,7 @@ class CategoryPickerViewController: UITableViewController {
             if let newCell = tableView.cellForRow(at: indexPath) {
                 newCell.accessoryType = .checkmark
             }
-            if let oldCell = tableView.cellForRow(at: indexPath) {
+            if let oldCell = tableView.cellForRow(at: selectedIndexPath) {
                 oldCell.accessoryType = .none
             }
             selectedIndexPath = indexPath
