@@ -62,9 +62,13 @@ class CategoryPickerViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "Cell",
             for: indexPath)
+        
         let categoryName = categories[indexPath.row]
+        
         var content = cell.defaultContentConfiguration()
         content.text = categoryName
+        content.textProperties.font = .systemFont(ofSize: 12)
+        
         if categoryName == selectedCategoryName {
             cell.accessoryType = .checkmark
         } else {
