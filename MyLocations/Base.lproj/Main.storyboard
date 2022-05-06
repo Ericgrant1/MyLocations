@@ -475,11 +475,11 @@
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="795.6521739130435"/>
         </scene>
-        <!--Item-->
+        <!--Locations-->
         <scene sceneID="hEC-lb-a6q">
             <objects>
                 <navigationController id="1Ad-Az-0r6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jN8-Cm-Cp7"/>
+                    <tabBarItem key="tabBarItem" title="Locations" id="jN8-Cm-Cp7"/>
                     <navigationItem key="navigationItem" id="Sgn-bz-Xes"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1N1-8w-LeY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

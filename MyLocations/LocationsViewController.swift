@@ -41,7 +41,7 @@ class LocationsViewController: UITableViewController {
             if let indexPath = tableView.indexPath(
                 for: sender as! UITableViewCell) {
                 let location = locations[indexPath.row]
-                // controller
+                controller.locationToEdit = location
             }
         }
     }
