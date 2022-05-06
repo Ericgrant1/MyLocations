@@ -46,29 +46,11 @@ class LocationsViewController: UITableViewController {
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "LocationCell",
-            for: indexPath)
+            for: indexPath) as! LocationCell
         
         let location = locations[indexPath.row]
-        
-        let descriptionLabel = cell.viewWithTag(100) as! UILabel
-        descriptionLabel.text = location.locationDescription
-        
-        let addresLabel = cell.viewWithTag(101) as! UILabel
-        if let placemark = location.placemark {
-            var text = ""
-            if let tmp = placemark.subThoroughfare {
-                text += tmp + " "
-            }
-            if let tmp = placemark.thoroughfare {
-                text += tmp + ", "
-            }
-            if let tmp = placemark.locality {
-                text += tmp
-            }
-            addresLabel.text = text
-        } else {
-            addresLabel.text = ""
-        }
+        cell.configure(for: location)
+
         return cell
     }
 }
