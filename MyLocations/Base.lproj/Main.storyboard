@@ -460,6 +460,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="bTT-cu-MBq" id="aog-1C-asn"/>
                                     <outlet property="descriptionLabel" destination="vND-8e-njq" id="WGh-BZ-teo"/>
+                                    <segue destination="4a3-L5-bT3" kind="show" identifier="EditLocation" id="9UB-rm-WpS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -493,6 +494,9 @@
             <point key="canvasLocation" x="1118" y="796"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9UB-rm-WpS"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
