@@ -39,6 +39,7 @@ class LocationsViewController: UITableViewController {
         super.viewDidLoad()
         
         performFetch()
+        navigationItem.rightBarButtonItem = editButtonItem
     }
     
     deinit {
