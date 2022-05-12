@@ -60,8 +60,6 @@
 		5253A46D281856DC00C10BCB = {
 			isa = PBXGroup;
 			children = (
-				5242D55128224605006AA10F /* Location+CoreDataClass.swift */,
-				5242D55228224605006AA10F /* Location+CoreDataProperties.swift */,
 				5253A478281856DC00C10BCB /* MyLocations */,
 				5253A477281856DC00C10BCB /* Products */,
 			);
@@ -86,6 +84,8 @@
 				528B62D22820394100EA1F00 /* HudView.swift */,
 				5253A48A281856DD00C10BCB /* Info.plist */,
 				5253A487281856DD00C10BCB /* LaunchScreen.storyboard */,
+				5242D55128224605006AA10F /* Location+CoreDataClass.swift */,
+				5242D55228224605006AA10F /* Location+CoreDataProperties.swift */,
 				52DBAC4E28257BF400EB2583 /* LocationCell.swift */,
 				52F8881F281D505900F170A2 /* LocationDetailsViewController.swift */,
 				52DBAC4C282510BA00EB2583 /* LocationsViewController.swift */,
@@ -333,6 +333,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add photos to your locations";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -364,6 +366,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add photos to your locations";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
