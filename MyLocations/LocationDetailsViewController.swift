@@ -36,6 +36,7 @@ class LocationDetailsViewController: UITableViewController {
     var date = Date()
     var descriptionText = ""
     var image: UIImage?
+    var observer: Any!
     
     var locationToEdit: Location? {
         didSet {
@@ -83,6 +84,11 @@ class LocationDetailsViewController: UITableViewController {
         tableView.addGestureRecognizer(gestureRecognizer)
         
         listenForBackgroundNotification()
+    }
+    
+    deinit {
+        print("*** deinit \(self)")
+        NotificationCenter.default.removeObserver(observer!)
     }
     
     // MARK: - Navigation
@@ -212,14 +218,17 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     func listenForBackgroundNotification() {
-        NotificationCenter.default.addObserver(
+        observer = NotificationCenter.default.addObserver(
             forName: UIScene.didEnterBackgroundNotification,
             object: nil,
-            queue: OperationQueue.main) { _ in
-                if self.presentedViewController != nil {
-                    self.dismiss(animated: false, completion: nil)
+            queue: OperationQueue.main) { [weak self] _ in
+                
+                if let weakSelf = self {
+                    if weakSelf.presentedViewController != nil {
+                        weakSelf.dismiss(animated: false, completion: nil)
+                    }
+                    weakSelf.descriptionTextView.resignFirstResponder()
                 }
-                self.descriptionTextView.resignFirstResponder()
             }
     }
 }
