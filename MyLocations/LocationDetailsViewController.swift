@@ -81,6 +81,8 @@ class LocationDetailsViewController: UITableViewController {
             action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+        
+        listenForBackgroundNotification()
     }
     
     // MARK: - Navigation
@@ -207,6 +209,18 @@ class LocationDetailsViewController: UITableViewController {
         
         imageHeight.constant = 260
         tableView.reloadData()
+    }
+    
+    func listenForBackgroundNotification() {
+        NotificationCenter.default.addObserver(
+            forName: UIScene.didEnterBackgroundNotification,
+            object: nil,
+            queue: OperationQueue.main) { _ in
+                if self.presentedViewController != nil {
+                    self.dismiss(animated: false, completion: nil)
+                }
+                self.descriptionTextView.resignFirstResponder()
+            }
     }
 }
 
