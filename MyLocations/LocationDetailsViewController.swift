@@ -25,6 +25,7 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var addPhoroLabel: UILabel!
+    @IBOutlet var imageHeight: NSLayoutConstraint!
     
     var coordinate = CLLocationCoordinate2D(
         latitude: 0,
@@ -203,6 +204,9 @@ class LocationDetailsViewController: UITableViewController {
         imageView.image = image
         imageView.isHidden = false
         addPhoroLabel.text = ""
+        
+        imageHeight.constant = 260
+        tableView.reloadData()
     }
 }
 

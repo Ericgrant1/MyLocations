@@ -341,6 +341,7 @@
                         <outlet property="categoryLabel" destination="3k7-WS-NDg" id="0y7-5D-p08"/>
                         <outlet property="dateLabel" destination="s6m-SE-hom" id="f4Q-KQ-Wmx"/>
                         <outlet property="descriptionTextView" destination="Mri-7M-7bK" id="5nS-tp-o6k"/>
+                        <outlet property="imageHeight" destination="xWV-iZ-8ji" id="1er-YD-DdM"/>
                         <outlet property="imageView" destination="9uA-ar-JJc" id="qiO-Fg-7T1"/>
                         <outlet property="latitudeLabel" destination="YDO-YP-7lH" id="9gq-ui-g6m"/>
                         <outlet property="longitudeLabe" destination="y8c-qd-SAh" id="0tR-Lh-EKf"/>
