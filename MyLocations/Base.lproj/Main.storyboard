@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZEA-bM-75X">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -35,14 +35,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Latitude goes here) " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw6-2O-huf">
-                                <rect key="frame" x="200" y="109" width="159" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="189.5" y="109" width="169.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Longitude goes here) " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9Z-hT-dvj">
                                 <rect key="frame" x="105" y="138" width="254" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -56,17 +56,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATB-ED-IB0">
-                                <rect key="frame" x="16" y="257" width="343" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Tag Location"/>
+                                <rect key="frame" x="16" y="257" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Tag Location"/>
                                 <connections>
                                     <segue destination="4a3-L5-bT3" kind="show" identifier="TagLocation" id="sp7-04-7kU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oa1-cP-Flb">
-                                <rect key="frame" x="16" y="563" width="343" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Get My Location"/>
+                                <rect key="frame" x="16" y="558" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Get My Location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="getLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="vrP-mV-SGC"/>
                                 </connections>
@@ -417,7 +421,7 @@
         <scene sceneID="zZq-I8-RTq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l36-CQ-VSk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tag" id="t2D-Hw-CK9"/>
+                    <tabBarItem key="tabBarItem" title="Tag" image="Tag" id="t2D-Hw-CK9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f6R-KC-fvE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -457,8 +461,8 @@
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTT-cu-MBq">
                                             <rect key="frame" x="76" y="37" width="283" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="0.0" alpha="0.50470334488824509" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" white="1" alpha="0.60422773550677777" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="highlightedColor" white="1" alpha="0.600964577782233" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g3X-yt-52f">
                                             <rect key="frame" x="16" y="6" width="52" height="52"/>
@@ -524,12 +528,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="OQN-Is-b8h">
-                        <barButtonItem key="leftBarButtonItem" title="Locations" id="Iy0-q6-YFK">
+                        <barButtonItem key="leftBarButtonItem" title="Locations" image="Pin" id="Iy0-q6-YFK">
                             <connections>
                                 <action selector="showLocations" destination="a8Y-UW-UPO" id="W5M-Be-sei"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="User" id="HRr-E6-wPA">
+                        <barButtonItem key="rightBarButtonItem" title="User" image="User" id="HRr-E6-wPA">
                             <connections>
                                 <action selector="showUser" destination="a8Y-UW-UPO" id="n8o-Ev-3gI"/>
                             </connections>
@@ -548,7 +552,7 @@
         <scene sceneID="hEC-lb-a6q">
             <objects>
                 <navigationController id="1Ad-Az-0r6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="jN8-Cm-Cp7"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="jN8-Cm-Cp7"/>
                     <navigationItem key="navigationItem" id="Sgn-bz-Xes"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1N1-8w-LeY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -566,7 +570,7 @@
         <scene sceneID="S7c-Y8-MaC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S6T-4b-vyx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="TSu-II-fKC"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="TSu-II-fKC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vv4-T3-Hpd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -583,9 +587,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9UB-rm-WpS"/>
+        <segue reference="1UU-51-38H"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" name="AccentColor"/>
     <resources>
+        <image name="Locations" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+        <image name="Pin" width="24" height="24"/>
+        <image name="Tag" width="30" height="30"/>
+        <image name="User" width="24" height="24"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.93333333333333335" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
