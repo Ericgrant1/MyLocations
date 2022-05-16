@@ -20,7 +20,7 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var latitudeLabel: UILabel!
-    @IBOutlet var longitudeLabe: UILabel!
+    @IBOutlet var longitudeLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
@@ -70,7 +70,7 @@ class LocationDetailsViewController: UITableViewController {
         latitudeLabel.text = String(
             format: "%.8f",
             coordinate.latitude)
-        longitudeLabe.text = String(
+        longitudeLabel.text = String(
             format: "%.8f",
             coordinate.longitude)
         if let placemark = placemark {
