@@ -352,6 +352,7 @@
 				DEVELOPMENT_TEAM = 972D9Z4QKX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Add photos to your locations";
@@ -386,6 +387,7 @@
 				DEVELOPMENT_TEAM = 972D9Z4QKX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Add photos to your locations";
