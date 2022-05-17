@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52238F04282A9DE100BA3F91 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52238F03282A9DE100BA3F91 /* MapViewController.swift */; };
+		523D77AA28335F3000747F1F /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 523D77A928335F3000747F1F /* Sound.caf */; };
 		5242D55328224605006AA10F /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242D55128224605006AA10F /* Location+CoreDataClass.swift */; };
 		5242D55428224605006AA10F /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242D55228224605006AA10F /* Location+CoreDataProperties.swift */; };
 		5253A47A281856DC00C10BCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253A479281856DC00C10BCB /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		52238F03282A9DE100BA3F91 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		523D77A928335F3000747F1F /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		5242D55128224605006AA10F /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5242D55228224605006AA10F /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5253A476281856DC00C10BCB /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		523D77A828335F3000747F1F /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				523D77A928335F3000747F1F /* Sound.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		5253A46D281856DC00C10BCB = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		5253A478281856DC00C10BCB /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				523D77A828335F3000747F1F /* Sound */,
 				5253A479281856DC00C10BCB /* AppDelegate.swift */,
 				5253A485281856DD00C10BCB /* Assets.xcassets */,
 				52BBF68A281E59B4008D9A5E /* CategoryPickerViewController.swift */,
@@ -163,6 +174,7 @@
 			files = (
 				5253A489281856DD00C10BCB /* LaunchScreen.storyboard in Resources */,
 				5253A486281856DD00C10BCB /* Assets.xcassets in Resources */,
+				523D77AA28335F3000747F1F /* Sound.caf in Resources */,
 				5253A481281856DC00C10BCB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
